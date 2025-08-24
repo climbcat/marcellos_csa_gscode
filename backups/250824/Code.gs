@@ -3,10 +3,12 @@ function onOpen() {
 
   // Create menu items
   ui.createMenu('Administrative functions')
-      .addItem('Copy all items to all sheets', 'copyValuesAndFormatting')
-      .addItem('Create picking list', 'createPickingList')
-      .addItem('Create Printable Document', 'createPrintable')
-      .addItem('Create Printable TEST', 'createPrintable_Test')
+      //.addItem('Copy all items to all sheets', 'copyValuesAndFormatting')
+      //.addItem('Create picking list', 'createPickingList')
+      //.addItem('Create Printable Document', 'createPrintable')
+
+      .addItem('Create Printable Sheets', 'createPrintableSheetsNew')
+      .addItem('Create Picking List', 'createPickingListNew')
       .addToUi();
 }
 
