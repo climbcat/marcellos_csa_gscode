@@ -1,4 +1,23 @@
 
+250824:
+
+Change of plans
+
+Getting things to work with JS seems to be a pain, requiring some annothing shit to go down, 
+thus we are going to use Python instead.
+
+For now, testing openpyxl. First test: do 
+
+<pre>
+source first_test.sh
+</pre>
+
+This test creates and activates a virtual environment into which 
+openpyxl is installed. Then it runs 'test.py' which opens 'test.xlsx' and prints the contents of (A1,1). Then
+the enviromnent is deactivated and deleted.
+
+The script must be called with 'source'
+
 
 250824:
 
