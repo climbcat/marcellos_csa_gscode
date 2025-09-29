@@ -78,6 +78,12 @@ function finalizeTotalsSheet(totalSheet, srcSheetsLength) {
     removeExtraRowsAndColumns(totalSheet);
     setAlternatingColours(totalSheet);
 
+    totalSheet.getRange(2, 2, 1, 1)
+      .setValue("Total")
+      .setFontSize(15)
+      .setFontWeight("bold")
+      .setHorizontalAlignment("center");
+
     var nrows = totalSheet.getLastRow();
     var ncols = totalSheet.getLastColumn();
     var first_summable_row = 5;
@@ -92,7 +98,8 @@ function finalizeTotalsSheet(totalSheet, srcSheetsLength) {
         totalSheet.getRange(i, 2, 1, 1)
           .setValue(row_total)
           .setFontSize(15)
-          .setFontWeight("bold");
+          .setFontWeight("bold")
+          .setHorizontalAlignment("center");
     }
 
     for(var i = 0; i < srcSheetsLength; i++) {
@@ -117,11 +124,13 @@ function updateTotalsSheet(totalSheet, srcSheet) {
       .getRange( 1, col, srcSheet.getMaxRows(), 1 )
       .setValues( srcSheet.getRange("B:B").getDisplayValues() )
       .setFontSize(15)
-      .setFontWeight("bold");
+      .setFontWeight("bold")
+      .setHorizontalAlignment("center");
 
+    var column_name = srcSheet.getName().replace(/grupp /g,"").replace(/Grupp /g,"").replace(/\"/g,"");
     totalSheet
       .getRange( 2, col, 1, 1)
-      .setValue( srcSheet.getName() )
+      .setValue( column_name )
       .setFontSize(15)
       .setFontWeight("bold")
 
